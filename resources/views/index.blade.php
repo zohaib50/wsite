@@ -23,41 +23,7 @@
     </div>
 </div>
 <main id="main-content">
-    <section class="search-area">
-        <div class="container">
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Find material kit near you.
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Find material + Contractor near you.</button>
-                </li>
-            </ul>
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    <div class="search-form">
-                        <div class="input-group">
-                            <input type="search" class="form-control" placeholder="Search">
-                            <div class="input-group-append">
-                                <button class="btn btn-submit" type="submit"><i class="fas fa-arrow-right"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    <div class="search-form">
-                        <div class="input-group">
-                            <input type="search" class="form-control" placeholder="Search">
-                            <div class="input-group-append">
-                                <button class="btn btn-submit" type="submit"><i class="fas fa-arrow-right"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <vue-search></vue-search>
     <!--            <section class="sec-1">
                     <div class="container">
                         <div class="row justify-content-center">

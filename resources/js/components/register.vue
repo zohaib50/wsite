@@ -13,7 +13,7 @@
                                     <div class="col-lg-12 col-md-12 col-12">
                                         <label class="form-label">Your Name</label>
                                         <input type="text" v-model="form.name" name="name" value="" class="form-control">
-<!--                                        <div class="alert alert-danger ">{{ $message }}</div>-->
+                                        <div class="invalid-feedback">Please choose a username.</div>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-12">
                                         <label class="form-label">Your Email</label>
@@ -63,7 +63,7 @@ export default {
                     console.log(response)
                     localStorage.setItem("authToken", response.data.data.token);
                 }).catch(error => {
-                    console.log(error)
+                    console.log(error.response.data.data)
             });
         }
     }

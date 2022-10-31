@@ -8,6 +8,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('vue-login', require('./components/login.vue').default);
 Vue.component('vue-register', require('./components/register.vue').default);
 Vue.component('vue-header', require('./components/header.vue').default);
+Vue.component('vue-search', require('./components/search.vue').default);
 
 Vue.config.productionTip = false;
 
