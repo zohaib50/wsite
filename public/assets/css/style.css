@@ -929,7 +929,7 @@ body {
 }
 
 .contractors-area .filter-area {
-  padding: 50px 0;
+  padding-bottom: 50px;
 }
 @media (max-width: 767.98px) {
   .contractors-area .filter-area {
@@ -1016,7 +1016,6 @@ body {
 }
 .contractors-area .contractors-info .contractor-card .contractor-content .job-box h5 {
   color: #000;
-  margin-bottom: 0;
   text-align: center;
   font-size: 17px;
   font-weight: 700;
@@ -1039,7 +1038,7 @@ body {
   font-weight: 600;
 }
 .contractors-area .contractors-info .contractor-card .contractor-content .address-box {
-  padding: 18px 0;
+  /*padding: 18px 0;*/
 }
 .contractors-area .contractors-info .contractor-card .contractor-content .address-box h5 {
   color: #000;
@@ -1059,7 +1058,6 @@ body {
 }
 .contractors-area .contractors-info .contractor-card .contractor-content p {
   color: #000;
-  padding: 12px 0;
   font-size: 16px;
   font-weight: 400;
 }
@@ -1102,7 +1100,7 @@ body {
 }
 .contractor-form-area .form-control {
   border-radius: 0;
-  margin-bottom: 20px;
+  /*margin-bottom: 20px;*/
 }
 .contractor-form-area .form-control:focus {
   -webkit-box-shadow: none;
@@ -1223,4 +1221,8 @@ body {
 #footer-content .footer-bottom .footer-nav li a {
   color: #ccc;
   font-size: 16px;
+}
+
+.owl-carousel {
+    display: block !important;
 }
