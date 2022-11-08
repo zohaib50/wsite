@@ -90,7 +90,7 @@ body {
   display: none;
 }
 #header-content .menu-bar .menu-content {
-  margin-top: 20px;
+  margin-top: 7px;
 }
 #header-content .menu-bar .menu-nav li a {
   color: #fff;
@@ -424,7 +424,7 @@ body {
 #banner-area .text-area .card-sec .main-card h4 {
   color: #fff;
   font-size: 18px;
-  padding: 12px 0;
+  padding: 0;
 }
 
 .banner-area {
@@ -432,7 +432,7 @@ body {
   background-image: url("https://via.placeholder.com/1920x750");
   background-repeat: no-repeat;
   background-size: cover;
-  margin-top: 80px;
+  margin-top: 70px;
   text-align: center;
 }
 
@@ -889,7 +889,8 @@ body {
 }
 
 .contractors-area .filter-area {
-  padding: 50px 0;
+  padding-bottom: 50px;
+  padding-top: 50px;
 }
 @media (max-width: 767.98px) {
   .contractors-area .filter-area {
@@ -997,7 +998,7 @@ body {
   font-weight: 600;
 }
 .contractors-area .contractors-info .contractor-card .contractor-content .address-box {
-  padding: 18px 0;
+  padding: 5px 0;
 }
 .contractors-area .contractors-info .contractor-card .contractor-content .address-box h5 {
   color: #000;
@@ -1058,7 +1059,6 @@ body {
 }
 .contractor-form-area .form-control {
   border-radius: 0;
-  margin-bottom: 20px;
 }
 .contractor-form-area .form-control:focus {
   box-shadow: none;
@@ -1293,4 +1293,56 @@ body {
 .wrapper .dashboard-area .dashboard-body .form-area .btn-login:hover {
   background-color: transparent;
   color: #000;
+}
+
+.owl-carousel {
+  display: block !important;
+}
+
+.nav-form {
+  color: black;
+}
+.nav-form:focus, .nav-form:hover {
+  background-color: #FFF;
+}
+
+.table-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% !important;
+}
+
+.action {
+  color: #000;
+}
+.action :hover {
+  color: #000;
+}
+
+.btn-feedback {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 50px;
+}
+.btn-feedback:hover {
+  color: #000 !important;
+  border: 1px solid #000;
+  background-color: #FFF;
+}
+
+.rating-content {
+  border: 1px solid #CCC;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.nav-avtar {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 50%;
+}
+
+.dropdown-toggle::after {
+  display: none;
 }

@@ -14,9 +14,9 @@
                                   <div class="col-lg-9 align-self-center hide-on-mobile">
                                       <ul class="nav menu-nav">
                                           <li class="nav-item">
-                                              <router-link :to="{name : 'index'}" class="nav-link">
-                                                  Service Locator
-                                              </router-link>
+<!--                                              <router-link :to="{name : 'index'}" class="nav-link">-->
+<!--                                                  Service Locator-->
+<!--                                              </router-link>-->
                                           </li>
                                       </ul>
                                   </div>
@@ -31,9 +31,9 @@
                                   </a>
                               </div>
                               <div class="mobile-logo">
-                                  <a href="#" style="color: #000;text-decoration: none;">
+                                  <router-link :to="{name : 'index'}" style="color: #000;text-decoration: none;">
                                       <img src="https://via.placeholder.com/412x199" class="img-fluid">
-                                  </a>
+                                  </router-link>
                               </div>
                           </div>
                       </div>
@@ -51,10 +51,20 @@
                                           <i class="fas fa-sign-in"></i>   <span>Signup</span>
                                       </router-link>
                                   </li>
-                                  <li class="nav-item" v-show="user">
-                                      <router-link :to="'/dashboard'" class="nav-link">
-                                          <i class="fas fa-sign-in"></i>   <span>Dashboard</span>
-                                      </router-link>
+                                  <li class="nav-item dropdown" v-if="user">
+                                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+<!--                                          <img :src="require('/images/user.jpg')" class="nav-avtar" />-->
+                                          <div class="d-flex flex-row">
+                                              <div class="">
+                                                  <avatar :fullname="user.name" :size="40"></avatar>
+                                              </div>
+                                              <div class="align-self-center" style="padding-left: 10px;">{{user.name}}</div>
+                                          </div>
+                                      </a>
+                                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                          <li><router-link class="dropdown-item" :to="{name : 'profile'}">Dashboard</router-link></li>
+                                          <li><a class="dropdown-item" @click="logout">Logout</a></li>
+                                      </ul>
                                   </li>
                               </ul>
                           </div>
@@ -154,12 +164,12 @@
                       <div class="col-lg-6 col-md-6 col-12">
                           <div class="newsletter-box">
                               <h2>Get In Touch</h2>
-                              <div class="input-group">
-                                  <input type="email" class="form-control" placeholder="Subscribe To Our Newsletter">
-                                  <div class="input-group-append">
-                                      <button class="btn btn-submit"><i class="fas fa-arrow-right text-white"></i></button>
-                                  </div>
-                              </div>
+<!--                              <div class="input-group">-->
+<!--                                  <input type="email" class="form-control" placeholder="Subscribe To Our Newsletter">-->
+<!--                                  <div class="input-group-append">-->
+<!--                                      <button class="btn btn-submit"><i class="fas fa-arrow-right text-white"></i></button>-->
+<!--                                  </div>-->
+<!--                              </div>-->
                           </div>
                       </div>
                       <div class="col-lg-6 col-md-6 col-12 align-self-center">
@@ -193,8 +203,8 @@
                                   </router-link>
                               </li>
                               <li class="nav-item">
-                                  <router-link :to="{name : 'contacter'}" class="nav-link">
-                                      Contracter
+                                  <router-link :to="{name : 'contact'}" class="nav-link">
+                                      Contact
                                   </router-link>
                               </li>
                           </ul>
@@ -224,23 +234,13 @@
                           </ul>
                           <ul class="nav footer-nav">
                               <li class="nav-item">
-                                  <a href="#" class="nav-link">
+                                  <a href="https://www.facebook.com/" target="_blank" class="nav-link">
                                       <img src="assets/img/fb.svg" class="img-fluid" alt="">
                                   </a>
                               </li>
                               <li class="nav-item">
-                                  <a href="#" class="nav-link">
+                                  <a href="https://twitter.com/" target="_blank" class="nav-link">
                                       <img src="assets/img/tw.svg" class="img-fluid" alt="">
-                                  </a>
-                              </li>
-                              <li class="nav-item">
-                                  <a href="#" class="nav-link">
-                                      <img src="assets/img/in.svg" class="img-fluid" alt="">
-                                  </a>
-                              </li>
-                              <li class="nav-item">
-                                  <a href="#" class="nav-link">
-                                      <img src="assets/img/insta.svg" class="img-fluid" alt="">
                                   </a>
                               </li>
                           </ul>
@@ -254,7 +254,7 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
-
+import Avatar from 'vue-avatar-component'
 export default {
   computed: {
     ...mapGetters("auth", ["user"])
@@ -321,10 +321,15 @@ export default {
     ...mapActions("auth", ["sendLogoutRequest", "getUserData"]),
 
     logout() {
-      this.sendLogoutRequest();
-      this.$router.push("/");
+      this.sendLogoutRequest().then(() => {
+          this.$router.push("/login")
+          this.$toasted.global.logout()
+      });
     }
   },
+  components:{
+      Avatar
+  }
 };
 </script>
 

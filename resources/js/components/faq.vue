@@ -17,7 +17,10 @@
 
 <script>
 export default {
-    name: "faq"
+    name: "faq",
+    mounted() {
+        window.scrollTo(0, 0)
+    }
 }
 </script>
 

@@ -30,7 +30,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "faq"
+  name: "faq",
+  mounted: function mounted() {
+    window.scrollTo(0, 0);
+  }
 });
 
 /***/ }),

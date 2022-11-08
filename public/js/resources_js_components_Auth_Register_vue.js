@@ -88,14 +88,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapGetters)(["errors"])),
   mounted: function mounted() {
     this.$store.commit("setErrors", {});
+    window.scrollTo(0, 0);
   },
   methods: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapActions)("auth", ["sendRegisterRequest"])), {}, {
     register: function register() {
       var _this = this;
       this.sendRegisterRequest(this.details).then(function () {
         _this.$router.push({
-          name: "dashboard"
+          name: "profile"
         });
+        _this.$toasted.global.register();
       });
     }
   })

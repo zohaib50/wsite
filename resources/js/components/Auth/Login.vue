@@ -25,7 +25,7 @@
                                             </div>
                                             <div class="col-lg-12 col-md-12 col-12">
                                                 <label class="form-label">Password</label>
-                                                <input type="password" v-model="details.password" :class="{ 'is-invalid': errors.password }" class="form-control">
+                                                <input type="password"  v-model="details.password" :class="{ 'is-invalid': errors.password }" class="form-control">
                                                 <div class="invalid-feedback" v-if="errors.password">{{ errors.password[0] }}</div>
                                                 <div v-else> &nbsp; </div>
                                             </div>
@@ -66,6 +66,7 @@ export default {
 
   mounted() {
     this.$store.commit("setErrors", {});
+      window.scrollTo(0, 0)
   },
 
   methods: {
@@ -73,7 +74,8 @@ export default {
 
     login: function() {
       this.sendLoginRequest(this.details).then(() => {
-        this.$router.push({ name: "dashboard" });
+        this.$router.push({ name: "profile" })
+          this.$toasted.global.login()
       });
     }
   }

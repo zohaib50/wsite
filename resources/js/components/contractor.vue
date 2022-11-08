@@ -185,7 +185,10 @@
 
 <script>
 export default {
-    name: "become-contractor"
+    name: "become-contractor",
+    mounted() {
+        window.scrollTo(0, 0)
+    }
 }
 </script>
 

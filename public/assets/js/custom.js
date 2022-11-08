@@ -81,10 +81,10 @@ $(document).ready(function () {
             }
         }
     });
-    $("#header-content .menu-area .site-nav .main-nav .dropdown").hover(function () {
-        $(this).find(".dropdown-menu").stop(!0, !0).delay(200).fadeIn(500)
-    }, function () {
-        $(this).find(".dropdown-menu").stop(!0, !0).delay(200).fadeOut(500)
-    });
+    // $("#header-content .menu-area .site-nav .main-nav .dropdown").hover(function () {
+    //     $(this).find(".dropdown-menu").stop(!0, !0).delay(200).fadeIn(500)
+    // }, function () {
+    //     $(this).find(".dropdown-menu").stop(!0, !0).delay(200).fadeOut(500)
+    // });
 
 });

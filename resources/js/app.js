@@ -25,22 +25,25 @@ axios.defaults.baseURL = `${process.env.MIX_APP_URL}/api`
 axios.interceptors.request.use(function(config) {
     config.headers.common = {
         Authorization: `Bearer ${localStorage.getItem("authToken")}`,
-        "Content-Type": "application/json",
-        Accept: "application/json"
+        // "Content-Type": "application/json",
+        Accept: "application/json",
+        // 'Content-Type': 'multipart/form-data'
     };
     return config;
 });
 
 Vue.component('vue-search', require('./components/includes/search.vue').default);
-
+Vue.component('top-rating', require('./components/includes/topRating.vue').default);
 Vue.component('social-media', require('./components/includes/socialmedia.vue').default);
 Vue.component('companies', require('./components/includes/companies.vue').default);
+Vue.component('avatar', require('vue-avatar-component').default);
+
+// global.jQuery = require('jquery');
+// var $ = global.jQuery;
+// window.$ = $;
 
 
-global.jQuery = require('jquery');
-var $ = global.jQuery;
-window.$ = $;
-
+import "./toasts";
 const app = new Vue({
     el: '#app',
     router,

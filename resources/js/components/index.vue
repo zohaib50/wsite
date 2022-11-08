@@ -22,141 +22,7 @@
         </div>
         <main id="main-content">
             <vue-search></vue-search>
-            <section class="reviews-area">
-                <div class="container">
-                    <h1><span>EXCELLENT</span> CUSTOMER FEEDBACK</h1>
-                    <div class="reviews-box">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-12">
-                                <div class="card review-card">
-                                    <div class="review-img">
-                                        <img src="assets/img/p1.webp" class="img-fluid">
-                                    </div>
-                                    <div class="review-rating">
-                                        <ul class="nav rating-nav">
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">
-                                                    <i class="fas fa-star"></i>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">
-                                                    <i class="fas fa-star"></i>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">
-                                                    <i class="fas fa-star"></i>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">
-                                                    <i class="fas fa-star"></i>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">
-                                                    <i class="fas fa-star"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="review-content">
-                                        <p>
-                                            "This goes directly to the cooling coil and cleans it up. This one is the Real Deal!"
-                                        </p>
-                                        <h4>DEREK K.</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-12">
-                                <div class="card review-card">
-                                    <div class="review-img">
-                                        <img src="assets/img/p2.webp" class="img-fluid">
-                                    </div>
-                                    <div class="review-rating">
-                                        <ul class="nav rating-nav">
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">
-                                                    <i class="fas fa-star"></i>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">
-                                                    <i class="fas fa-star"></i>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">
-                                                    <i class="fas fa-star"></i>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">
-                                                    <i class="fas fa-star"></i>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">
-                                                    <i class="fas fa-star"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="review-content">
-                                        <p>
-                                            "Bacteria is an important topic. It's a very good Feeling after the Cleaning. This is a really good product"
-                                        </p>
-                                        <h4>SUNIL S.</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-12">
-                                <div class="card review-card">
-                                    <div class="review-img">
-                                        <img src="assets/img/p3.webp" class="img-fluid">
-                                    </div>
-                                    <div class="review-rating">
-                                        <ul class="nav rating-nav">
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">
-                                                    <i class="fas fa-star"></i>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">
-                                                    <i class="fas fa-star"></i>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">
-                                                    <i class="fas fa-star"></i>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">
-                                                    <i class="fas fa-star"></i>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">
-                                                    <i class="fas fa-star"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="review-content">
-                                        <p>
-                                            "It goes directly to the Cooling Coil and kills the Bacteria. Whereby other products just give a nice smell."
-                                        </p>
-                                        <h4>TOBIAS R.</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <top-rating></top-rating>
             <companies></companies>
             <social-media></social-media>
         </main>
@@ -164,7 +30,10 @@
 </template>
 <script>
 export default {
-    name: "index"
+    name: "index",
+    mounted() {
+        window.scrollTo(0, 0)
+    }
 }
 </script>
 

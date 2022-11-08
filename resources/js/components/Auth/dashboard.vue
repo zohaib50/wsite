@@ -19,49 +19,32 @@
                                 </button>
                                 <div class="collapse navbar-collapse" id="navbarNav">
                                     <ul class="navbar-nav">
-                                        <li><a href="#" class="nav-link ">Profile</a></li>
-                                        <li><a href="#" class="nav-link">Give Feedback</a></li>
+                                        <li><router-link :to="{name : 'profile'}" class="nav-link" :class="{active: $route.name==='profile'}">Profile</router-link></li>
+                                        <li><router-link :to="{name : 'jobs'}" class="nav-link" :class="{active: $route.name==='jobs'}">Jobs</router-link></li>
                                     </ul>
                                 </div>
                             </div>
                         </nav>
                         <div class="dashboard-area">
                             <div class="row">
-                                <div class="col-lg-4 col-md-4 col-12">
+                                <div class="col-lg-3 col-md-4 col-12">
                                     <div class="dashboard-links">
                                         <nav>
                                             <ul class="nav flex-column dashboard-menu">
-                                                <li><a href="#" class="nav-link active"><i class="fas fa-users"></i> Profile</a></li>
-                                                <li><a href="#" class="nav-link"><i class="fas fa-pencil"></i> Give Feedback</a></li>
-
+                                                <li><router-link :to="{name : 'profile'}" class="nav-link" :class="{active: $route.name==='profile'}"><i class="fas fa-users"></i> Profile</router-link></li>
+                                                <li><router-link :to="{name : 'jobs'}" class="nav-link" :class="{active: $route.name==='jobs'}"><i class="fas fa-pencil"></i>Jobs</router-link></li>
                                             </ul>
                                         </nav>
                                     </div>
                                 </div>
-                                <div class="col-lg-8 col-md-8 col-12">
-                                    <div class="dashboard-body">
-                                        <div class="form-area">
-                                            <div class="col-lg-6">
-                                                <form>
-                                                    <label class="form-label" for="name">Username or Email</label>
-                                                    <input type="text" class="form-control" id="name">
-                                                    <label class="form-label" for="pass">Password</label>
-                                                    <input type="password" class="form-control" id="pass">
-                                                    <a href="#" class="lost">
-                                                        Forgot Password <i class="fas fa-question"></i>
-                                                    </a>
-                                                    <button class="btn btn-login">Log in</button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="col-lg-9 col-md-8 col-sm-12">
+                                    <router-view></router-view>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-
             <companies></companies>
             <social-media></social-media>
         </main>
@@ -70,11 +53,15 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+import StarRating from 'vue-star-rating'
 export default {
     name: "dashboard",
     computed: {
         ...mapGetters("auth", ["user"])
     },
+    mounted() {
+        this.$store.commit("setErrors", {});
+    }
 }
 </script>
 

@@ -77,6 +77,7 @@ export default {
 
   mounted() {
     this.$store.commit("setErrors", {});
+      window.scrollTo(0, 0)
   },
 
   methods: {
@@ -84,9 +85,10 @@ export default {
 
     register: function() {
       this.sendRegisterRequest(this.details).then(() => {
-        this.$router.push({ name: "dashboard" });
+        this.$router.push({ name: "profile" })
+        this.$toasted.global.register()
       });
-    }
+    },
   }
 };
 </script>

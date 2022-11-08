@@ -32,8 +32,10 @@ export default {
   computed: {
     ...mapGetters("auth", ["user"])
   },
-
-  methods: {
+    mounted() {
+        window.scrollTo(0, 0)
+    },
+    methods: {
     ...mapActions("auth", ["sendVerifyResendRequest"]),
 
     verifyResend() {

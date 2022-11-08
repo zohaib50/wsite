@@ -209,7 +209,10 @@
 
 <script>
 export default {
-    name: "material-kit"
+    name: "material-kit",
+    mounted() {
+        window.scrollTo(0, 0)
+    }
 }
 </script>
 
